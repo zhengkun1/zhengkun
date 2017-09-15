@@ -36,45 +36,37 @@ var drivers =[
     type :'mouse',      
     open: function(){
         console.log('mouse open');
-
     },
     write : function(content){
         console.log(`mouse ${content}`);
-
     },
     read : function(){
         console.log('mouse read');
-
     },
     close : function(){
         console.log('mouse close');
     }
-
 },
-    {
+{
     type :'keyboard',      
     open: function(){
         console.log('keyboard open');
-
     },
     write : function(content){
         console.log(`keyboard ${content}`);
-
     },
     read : function(){
         console.log('keyboard read');
-
     },
     close : function(){
         console.log('keyboard close');
     }
-
 },
 ]
 
 
 
-var fd = open('keyboard');
+var fd = open('mouse');
 write(fd,`hello`);
 read(fd);
 close(fd);
