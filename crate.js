@@ -12,12 +12,12 @@ var i = {
     age : 10
 }
 var a = Object.create(person,{
-    age : {
-        value :20  
+    name: {
+        value :22222
     }
 });
 var b = Object.create(person,{});
-console.log(a.age,b.age);
+console.log(a.name,b.age);
 console.log(a.__proto__);
 
 
@@ -34,10 +34,13 @@ console.log(p.__proto__ === String.prototype);
 
 var number = 12345
 var boolean = true 
-console.log(typeof number,typeof boolean);
+console.log(number,boolean);
 console.log(typeof number.__proto__.__proto__,typeof boolean.__proto__);
 console.log(number.__proto__.__proto__ === Object.prototype);
 console.log(number.__proto__ === Number.prototype);
 console.log(boolean.__proto__.__proto__ === Object.prototype);
 console.log(boolean.__proto__ === Boolean.prototype);
+
+
+console.log(Function.prototype.constructor === Function)
 
