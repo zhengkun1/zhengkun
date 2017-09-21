@@ -2,7 +2,7 @@
  * 2017-9-17   zhengkun
  */
 
-var i = 1
+var i = 2
 if(i < 10) {
    var x = i + 1
 };

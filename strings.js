@@ -28,7 +28,7 @@ console.log('endswith')
 //end withs
 
 console.log(a.endsWith('brave'))
-console.log(a.endsWith('world'));
+console.log(a.endsWith('world '));
 console.log(a.endsWith('brave',5));
 
 
