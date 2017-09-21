@@ -6,7 +6,7 @@
 function animal(){};
 animal.prototype = {
     live : true,
-    canrun : true,
+    canrun : false,
     m : function(){
         console.log('animal.m')}
 };
@@ -51,3 +51,7 @@ var d = new jingyu();
 
 var k = Object.create(Function.prototype,[]);
 console.log(typeof k);
+console.log(d.canrun);
+console.log(d.livedin)
+d.m();
+c.eat();
