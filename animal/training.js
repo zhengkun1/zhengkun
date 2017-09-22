@@ -67,8 +67,24 @@ console.log(_.sortedIndex(a,100));
 console.log('---pull---');
 var a = [1,2,3,2,1,3];
 console.log(_.pull(a,2));
-console.log(_.pullAll(a,2));
+console.log(_.pullAll(a,[2]));
 
 
+console.log('---pullat--- ');
+var array = ['a', 'b', 'c', 'd'];
+var pulled = _.pullAt(array, [1, 3]);
+ console.log(array);
+// => ['a', 'c']
+ console.log(pulled);
+// => ['b', 'd']
 
+console.log('---remove---');
+var array = [1, 2, 3, 4];
+var evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+ console.log(array);
+// => [1, 3]
+ console.log(evens);
+ // => [2, 4]
 

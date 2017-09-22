@@ -9,13 +9,13 @@ const shark = require('./shark')
 var b = new shark;
 console.log(b.haveqi);
 console.log(b.howtolive);
-const bird = require('./bird');
-console.log(bird.prototype);
-
-const fish = require('./fish');
-console.log(fish.prototype);
 
 const tuoniao = require('./tuoniao');
-var c = new tuoniao
+var c = new tuoniao;
 console.log(c.eatwhat);
+
+const jingyu = require('./jingyu');
+var d  = new jingyu;
+console.log(d.tixing);
+
 

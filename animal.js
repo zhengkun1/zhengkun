@@ -10,20 +10,7 @@ animal.prototype = {
     m : function(){
         console.log('animal.m')}
 };
-function bird(){};
-bird.prototype = {
-    canfly : true,
-    cantfly : true
-};
-bird.prototype.__proto__ = animal.prototype;
-function fish(){};
-fish.prototype ={
-    haveqi: 'yes',
-    eat : function(){
-        console.log('eat meat')
-    }
-};
-fish.prototype.__proto__ = animal.prototype;
+
 function ying(){};
 ying.prototype = {
     livedin :  'sky'
