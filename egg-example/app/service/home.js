@@ -37,7 +37,13 @@ module.exports = app => {
       const e = a.getDate();
       const f = a.getMinutes();
       const g = a.getSeconds();
-      return `${d}-${c + 1}-${e} ${b}:${f}:${g}`;
+      return `${d}-${this.fo(c + 1)}-${e} ${b}:${f}:${g}`;
+    }
+    fo(c) {
+      if (c < 10) {
+        return '0' + c;
+      }
+      return c;
     }
   }
   return Home;
