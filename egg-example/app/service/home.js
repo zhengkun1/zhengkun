@@ -37,7 +37,7 @@ module.exports = app => {
       const e = a.getDate();
       const f = a.getMinutes();
       const g = a.getSeconds();
-      return `${d}-${this.fo(c + 1)}-${e} ${b}:${f}:${g}`;
+      return `${d}-${this.fo(c + 1)}-${this.fo(e)} ${this.fo(b)}:${this.fo(f)}:${this.fo(g)}`;
     }
     fo(c) {
       if (c < 10) {
