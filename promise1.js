@@ -11,9 +11,8 @@ function a(){
 };
 a().then(function(v){
     console.log(`2 -${v}`)
-    return v
-}).then(function(v){
-    console.log(`3: ${v}`)
+}).then(function(a){
+    console.log(`3: ${a}`)
 }).catch(function(error){
     console.log('error')
 });

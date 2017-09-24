@@ -88,3 +88,22 @@ var evens = _.remove(array, function(n) {
  console.log(evens);
  // => [2, 4]
 
+
+console.log('---sortedIndex---');
+var a = [2,3,4,5,6];
+console.log(_.sortedIndex(a,3.5));
+
+console.log('---sortedIndexby---');
+var objects = [{ 'x': 4 }, { 'x': 5 }];
+
+console.log(_.sortedIndexBy(objects, { 'x': 4 }, function(o) {
+  return o.x; 
+}));
+// => 0
+
+// The `_.property` iteratee shorthand.
+console.log(_.sortedIndexBy(objects, { 'x': 4 }, 'x'));
+// => 0
+
+
+

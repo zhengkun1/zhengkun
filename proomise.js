@@ -17,4 +17,5 @@ function asyncFunction() {
       console.log(`3:${value}`)
   }).catch(function(error){
       console.log(`catch : ${error}`)
-  })
+  });
+
