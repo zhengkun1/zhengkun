@@ -106,4 +106,3 @@ console.log(_.sortedIndexBy(objects, { 'x': 4 }, 'x'));
 // => 0
 
 
-

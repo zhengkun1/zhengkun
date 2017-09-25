@@ -41,6 +41,12 @@ module.exports = app => {
     * date() {
       this.ctx.body = yield this.service.home.date();
     }
+    * lodash1() {
+      this.ctx.body = yield this.service.array.countby1();
+    }
+    * collection() {
+      this.ctx.body = yield this.service.collection.countby();
+    }
   }
   return HomeController;
 };

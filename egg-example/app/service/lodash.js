@@ -1,5 +1,5 @@
 /**
- * 2017-9-23 zhengku
+ * 2017-9-23 zhengkun
  */
 'use strict';
 const _ = require('lodash');
