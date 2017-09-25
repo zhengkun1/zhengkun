@@ -9,7 +9,7 @@ module.exports = app => {
       return _.zipObject([ 'a', 'b' ], [ 1, 2 ]);
     }
     * zipwith() {
-      return _.zipWith([ 1, 2 ], [ 10, 20 ], function(a, b, c) {
+      return _.zipWith([ 1, 2 ], [ 10, 20 ], [ 100, 200 ], function(a, b, c) {
         return a + b + c;
       });
     }

@@ -42,7 +42,7 @@ module.exports = app => {
       this.ctx.body = yield this.service.home.date();
     }
     * lodash1() {
-      this.ctx.body = yield this.service.array.countby1();
+      this.ctx.body = yield this.service.array.zipwith();
     }
     * collection() {
       this.ctx.body = yield this.service.collection.countby();
