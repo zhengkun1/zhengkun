@@ -26,6 +26,30 @@ module.exports = app => {
     * delete1() {
       this.ctx.body = yield this.service.test.delete1(this.ctx.request.body);
     }
+    * create2() {
+      this.ctx.body = yield this.service.test.create2(this.ctx.request.body);
+    }
+    * get2() {
+      this.ctx.body = yield this.service.test.get2(this.ctx.request.body);
+    }
+    * update2() {
+      this.ctx.body = yield this.service.test.update2(this.ctx.request.body);
+    }
+    * delete2() {
+      this.ctx.body = yield this.service.test.delete2(this.ctx.request.body);
+    }
+    * create3() {
+      this.ctx.body = yield this.service.test.create3(this.ctx.request.body);
+    }
+    * get3() {
+      this.ctx.body = yield this.service.test.get3(this.ctx.request.body);
+    }
+    * update3() {
+      this.ctx.body = yield this.service.test.update3(this.ctx.request.body);
+    }
+    * delete3() {
+      this.ctx.body = yield this.service.test.delete3(this.ctx.request.body);
+    }
   }
   return TestController;
 };

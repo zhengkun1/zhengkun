@@ -35,5 +35,30 @@ module.exports = app => {
 
       yield app.mysql.query(userSchema.toString());
     }
+    const has10k = yield app.mysql.query(knex.schema.hasTable('10k').toString());
+    if (has10k.length === 0) {
+      const studentSchema = knex.schema.createTableIfNotExists('10k', function(table) {
+        table.increments();
+        table.string('name').notNullable().defaultTo('');
+        table.integer('age').notNullable().defaultTo('0');
+        table.timestamp('create_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+
+      yield app.mysql.query(studentSchema.toString());
+    }
+
+    const has9k = yield app.mysql.query(knex.schema.hasTable('9k').toString());
+    if (has9k.length === 0) {
+      const kSchema = knex.schema.createTableIfNotExists('9k', function(table) {
+        table.increments();
+        table.string('name').notNullable().defaultTo('');
+        table.integer('age').notNullable().defaultTo('0');
+        table.timestamp('create_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+
+      yield app.mysql.query(kSchema.toString());
+    }
   });
 };
