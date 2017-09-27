@@ -142,17 +142,25 @@ module.exports = app => {
     * get3() {
       let res;
       try {
-        res = yield app.mysql.select('9k');
+        res = yield app.mysql.select('9k', {
+          where: {
+            name: [ 'zheng', 'kun' ],
+          },
+        });
       } catch (b) {
         this.ctx.logger.error(b);
         return false;
       }
       return res;
     }
-    * update3(k) {
+    * update3() {
+      const conn = yield app.mysql.beginTransaction();
       try {
-        yield app.mysql.update('9k', k);
+        yield conn.update('user', { id: 1, age: 100 });
+        yield conn.update('student', { id: 1, age: 1000 });
+        yield conn.commit();
       } catch (b) {
+        yield conn.rollback();
         this.ctx.logger.error(b);
         return false;
       }

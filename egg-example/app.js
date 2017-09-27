@@ -54,11 +54,26 @@ module.exports = app => {
         table.increments();
         table.string('name').notNullable().defaultTo('');
         table.integer('age').notNullable().defaultTo('0');
+        table.string('class').notNullable().defaultTo('');
+        table.integer('xuehao').notNullable().defaultTo('0');
         table.timestamp('create_at').defaultTo(knex.fn.now());
         table.charset('utf8');
       });
 
       yield app.mysql.query(kSchema.toString());
+    }
+    const has11k = yield app.mysql.query(knex.schema.hasTable('11k').toString());
+    if (has11k.length === 0) {
+      const zSchema = knex.schema.createTableIfNotExists('11k', function(table) {
+        table.increments();
+        table.string('class').notNullable().defaultTo('');
+        table.string('name').notNullable().defaultTo('');
+        table.integer('xuehao').notNullable().defaultTo('0');
+        table.timestamp('create_at').defaultTo();
+        table.charset('utf8');
+      });
+
+      yield app.mysql.query(zSchema.toString());
     }
   });
 };

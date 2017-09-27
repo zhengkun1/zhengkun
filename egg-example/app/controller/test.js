@@ -45,7 +45,7 @@ module.exports = app => {
       this.ctx.body = yield this.service.test.get3(this.ctx.request.body);
     }
     * update3() {
-      this.ctx.body = yield this.service.test.update3(this.ctx.request.body);
+      this.ctx.body = yield this.service.test.update3();
     }
     * delete3() {
       this.ctx.body = yield this.service.test.delete3(this.ctx.request.body);

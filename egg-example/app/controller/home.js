@@ -28,9 +28,7 @@ module.exports = app => {
       this.ctx.body = a + b;
     }
     * zk() {
-      const c = yield this.service.zk1.zk1();
-      const d = yield this.service.zk2.zk2();
-      this.ctx.body = c + d;
+      this.ctx.body = this.ctx.helper.zheng(this.ctx.request.quert.c);
     }
     * zhengkun() {
       this.ctx.body = yield this.service.home.zhengkun();

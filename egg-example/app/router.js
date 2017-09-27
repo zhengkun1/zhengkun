@@ -25,10 +25,13 @@ module.exports = app => {
   app.post('/get2', 'test.get2');
   app.post('/update2', 'test.update2');
   app.post('/delete2', 'test.delete2');
-  app.post('/create3', 'test.create3');
+  app.post('/create3', 'test.create2');
   app.post('/get3', 'test.get3');
   app.post('/update3', 'test.update3');
   app.post('/delete3', 'test.delete3');
-
+  app.post('/crate4', 'training.create');
+  app.post('/get4', 'training.get');
+  app.post('/udpate4', 'training.update');
+  app.post('/delete4', 'training.delete');
 
 };
