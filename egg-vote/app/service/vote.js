@@ -2,7 +2,6 @@
  * 2017-9-28 zhengkun
  */
 'use strict';
-const knex = require('knex');
 module.exports = app => {
   class Vote extends app.Service {
     * create(a) {
@@ -78,4 +77,5 @@ module.exports = app => {
       return true;
     }
   }
+  return Vote;
 };
