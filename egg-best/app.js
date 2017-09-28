@@ -38,6 +38,7 @@ module.exports = app => {
       yield app.mysql.query(userSchema.toString());
       yield ctx.helper.unique(app, 'student', 'name');
     }
+    ctx.logger.info('some request data');
 
   });
 };

@@ -8,8 +8,8 @@
 const knex = require('knex')({
   client: 'mysql',
 });
-
 module.exports = app => {
+  const start = Date.now();
   app.beforeStart(function* () {
     const hasUser = yield app.mysql.query(knex.schema.hasTable('user').toString());
     if (hasUser.length === 0) {
@@ -76,4 +76,6 @@ module.exports = app => {
       yield app.mysql.query(zSchema.toString());
     }
   });
+
+  app.logger.info(1000, Date.now() - start);
 };
