@@ -1,14 +1,13 @@
 'use strict';
 
 module.exports = app => {
-  app.get('/', 'home.index');
-  app.post('/create', 'vote.create');
-  app.post('/delete', 'vote.delete');
-  app.post('/update', 'vote.update');
-  app.post('/get', 'vote.get');
-  app.post('/create1', 'vote.create1');
-  app.post('/delete1', 'vote.delete1');
-  app.post('/update1', 'vote.update1');
-  app.post('/get1', 'vote.get1');
+  app.post('/user/username', 'user.username');
+  app.post('/user/password', 'user.password');
+  app.post('/user/login', 'user.login');
+  app.post('/mobile/set', 'mobile.set');
+  app.post('/mobile/reset', 'mobile.reset');
+  app.post('/works/vote', 'works.vote');
+  app.post('/works/picture url', 'works.url');
+  app.post('/check/picture', 'works.picture');
 
 };
