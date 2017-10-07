@@ -17,9 +17,10 @@ module.exports = app => {
       }
       return true;
     }
-    * vote(a) {
+    * vote() {
+      const vote = yield app.mysql.beginTranscation();
       try {
-        yield app.mysql.update('works', a);
+        yield vote.update('works', 'user.vote');
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
