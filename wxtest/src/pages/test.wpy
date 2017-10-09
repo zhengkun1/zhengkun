@@ -1,105 +1,240 @@
 <style lang="less">
 .text {
-  color:red;
-  background-color:yellow;
+  color: red;
+  background-color: yellow;
   display: flex;
   justify-content: center;
+}
+.aaa {
+  color: blueviolet;
+  background-color: burlywood;
+  margin: 10px 10px;
+  padding: 5px 5px;
 }
 </style>
 
 <template>
-  <view>
-    <view>Name  :  10k</view>
-    <view>Age  : 18</view>
-    <view>Home  :  BaoDing</view>
-    <view>From  :  LangFang</view>
+  <view class="container">
+    <view class="aaa">Name : 10k</view>
+    <view>Age : 18</view>
+    <view>Home : BaoDing</view>
+    <view>From : LangFang</view>
     <view>Majors : Electronic information science and technology</view>
     <view>Favourite : programming</view>
 
-
-
-    <view class="text">
+    <view class="aaa ">
       <button size="mini" bindtap="add">{{count}}</button>
     </view>
 
-
     <view>同学评价</view>
     <view>
-        <checkbox-group bindchange="checkboxChange">
-        <label  wx:for="{{items}}" wx:key="Index">
-        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      <checkbox-group bindchange="checkboxChange">
+        <label wx:for="{{items}}" wx:key="Index">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
         </label>
-        </checkbox-group>
+      </checkbox-group>
     </view>
-
 
     <form bindsubmit="formSubmit" bindreset="formReset">
-    <view>
-    <view>开关</view>
-    <switch name="switch"/>
-    </view>
-    <view>
-    <view>音量大小</view>
-    <slider name="slider" show-value ></slider>
-    </view>
-    <view>
-    <view>input</view>
-    <input name="input" placeholder="please input here" />
-    </view>
-    <view>
-    <view>checkbox</view>
-    <radio-group name="radio-group">
-      <label><radio value="checkbox1"/>radio1</label>
-      <label><radio value="checkbox2"/>radio2</label>
-    </radio-group>
-    </view>
-    <view>
-    <view>性别</view>
-    <checkbox-group name="性别">
-      <label><checkbox value="男"/>男</label>
-      <label><checkbox value="女"/>女</label>
-    </checkbox-group>
-    </view>
-    <view>
-    <button formType="submit">Submit</button>
-    <button formType="reset">Reset</button>
-    </view>
+      <view>
+        <view>开关</view>
+        <switch name="switch" />
+      </view>
+      <view>
+        <view>音量大小</view>
+        <slider name="slider" show-value></slider>
+      </view>
+      <view>
+        <view>input</view>
+        <input name="input" placeholder="please input here" />
+      </view>
+      <view>
+        <view>checkbox</view>
+        <radio-group name="radio-group">
+          <label>
+            <radio value="checkbox1" />radio1</label>
+          <label>
+            <radio value="checkbox2" />radio2</label>
+        </radio-group>
+      </view>
+      <view>
+        <view>性别</view>
+        <checkbox-group name="性别">
+          <label>
+            <checkbox value="男" />男</label>
+          <label>
+            <checkbox value="女" />女</label>
+        </checkbox-group>
+      </view>
+      <view>
+        <button formType="submit">Submit</button>
+        <button formType="reset">Reset</button>
+      </view>
     </form>
+
+    <view class="section">
+      <input placeholder="这是一个可以自动聚焦的input" auto-focus/>
+    </view>
+    <view class="section">
+      <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+      <view class="btn-area">
+        <button bindtap="bindButtonTap">使得输入框获取焦点</button>
+      </view>
+    </view>
+    <view class="section">
+      <input maxlength="10" placeholder="最大输入长度10" />
+    </view>
+    <view class="section">
+      <view class="section__title">你输入的是：{{inputValue}}</view>
+      <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    </view>
+    <view class="section">
+      <input bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
+    </view>
+    <view class="section">
+      <input password type="number" />
+    </view>
+    <view class="section">
+      <input password type="text" />
+    </view>
+    <view class="section">
+      <input type="digit" placeholder="带小数点的数字键盘" />
+    </view>
+    <view class="section">
+      <input type="idcard" placeholder="身份证输入键盘" />
+    </view>
+    <view class="section">
+      <input placeholder-style="color:red" placeholder="占位符字体是红色的" />
+    </view>
+
+    <view>
+      <image src="{{src}}"></image>
+      <button size="default" @tap="camera">拍照</button>
+    </view>
+
+    <view class="container">
+      <video src="{{src}}"></video>
+      <button bindtap="bindButtonTap">上传视频</button>
+    </view>
+    <audio poster="{{poster}}" name="{{name1}}" author="{{author1}}" src="{{adr}}" id="myAudio" controls loop></audio>
+    <button type="primary" bindtap="audioPlay">播放</button>
+    <button type="primary" bindtap="audioPause">暂停</button>
+    <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+    <button type="primary" bindtap="audioStart">回到开头</button>
 
   </view>
 </template>
 <script>
-  import wepy from 'wepy'
+import wepy from 'wepy'
 
-  export default class Index extends wepy.page {
-    config = {
-      navigationBarTitleText: '个人介绍'
-    }
-    data = {
-      size: 'mini',
-      count: 0,
-      items: [
-      {name: 'USA', value: '帅气'},
-      {name: 'CHN', value: '男神'},
-      {name: 'BRA', value: '完美'},
-      {name: 'JPN', value: '学霸'},
-      {name: 'ENG', value: '王者'},
-      {name: 'TUR', value: '10K'}
-      ]
-    }
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '个人介绍'
+  }
+  data = {
+    size: 'mini',
+    count: 0,
+    items: [
+      { name: 'USA', value: '帅气' },
+      { name: 'CHN', value: '男神' },
+      { name: 'BRA', value: '完美' },
+      { name: 'JPN', value: '学霸' },
+      { name: 'ENG', value: '王者' },
+      { name: 'TUR', value: '10K' }
+    ],
+    focus: false,
+    inputValue: '',
+    src: '',
+    adr: '../audio/陈奕迅-倾城 (Live).mp3',
+    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+    name1: '倾城',
+    author1: 'Eason'
+  }
+  methods = {
+    add() {
+      let self = this
+
+      self.count++
+    },
+    camera() {
+      let self = this
+      wepy.chooseImage({
+        count: 9, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function(res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          self.src = res.tempFilePaths[0]
+          self.setData({
+            src: res.tempFilePaths[0]
+          })
+        }
+      })
+    },
+    bindButtonTap() {
+      var that = this
+      wepy.chooseVideo({
+        sourceType: ['album', 'camera'],
+        maxDuration: 60,
+        camera: 'back',
+        success: function(res) {
+          that.setData({
+            src: res.tempFilePath
+          })
+        }
+      })
+    },
+    audioPlay() {
+      this.audioCtx.play()
+    },
+    audioPause() {
+      this.audioCtx.pause()
+    },
+    audio14() {
+      this.audioCtx.seek(14)
+    },
+    audioStart() {
+      this.audioCtx.seek(0)
+    },
+    indButtonTap() {
+      this.setData({
+        focus: true
+      })
+    },
+    bindKeyInput(e) {
+      this.setData({
+        inputValue: e.detail.value
+      })
+    },
+    bindReplaceInput(e) {
+      var value = e.detail.value
+      var pos = e.detail.cursor
+      if (pos !== -1) {
+        // 光标在中间
+        var left = e.detail.value.slice(0, pos)
+        // 计算光标的位置
+        pos = left.replace(/11/g, '2').length
+      }
+      // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
+      return {
+        value: value.replace(/11/g, '2'),
+        cursor: pos
+      }
+      // 或者直接返回字符串,光标在最后边
+      // return value.replace(/11/g,'2')
+    },
     formSubmit(e) {
       console.log('form发生了submit事件，携带数据为：提交成功', e.detail.value)
-    }
+    },
     formReset() {
       console.log('form发生了reset事件')
     }
-    methods = {
-      add() {
-        let self = this
-
-        self.count++
-      }
-    }
-    onLoad() {}
   }
+  onLoad() { }
+  onReady(e) {
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wepy.createAudioContext('myAudio')
+    this.audioCtx.setSrc()
+  }
+}
 </script>
