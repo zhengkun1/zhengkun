@@ -1,0 +1,103 @@
+<style lang= "less">
+.biaoti {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+}
+.biaoti1 {
+  display: flex;
+  justify-content: center;
+}
+.biaoti2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 80px
+}
+
+.word {
+  font-size: 15px
+}
+
+.margin {
+  margin: 10px 10px 10px 70px;
+}
+
+.margin1 {
+  margin: 10px 10px 10px 10px;
+}
+
+.margin2 {
+  margin: 10px 70px 10px 10px;
+}
+.margin3 {
+  margin: 30px
+}
+.flex {
+  flex: 1;
+  background-color: blanchedalmond;
+  height: 80px;
+  width: 300px;
+  font-size: 15px
+}
+.border {
+  /* display: flex;
+  justify-content: center; */
+  border: 1px solid black;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  /* margin: 10px 60px 10px 10px;
+  flex-direction: row; */
+}
+.line {
+  width: 50px;
+  height: 1px;
+  background-color: black;
+}
+</style>
+
+<template>
+  <view>
+    <view class="biaoti1">简单2步，选中心动好礼</view>
+    <view class="biaoti2">
+      <text class="border"></text>
+      <text class="line"></text>
+      <text class="border"></text>
+      <text class="line"></text>
+      <text class="border"></text>
+    </view>
+    <view class="biaoti">
+      <text class="margin word">送给TA</text>
+      <text class="margin1 word">TA喜欢的</text>
+      <text class="margin2 word">完成</text>
+    </view>
+    <view class="biaoti">
+      <text class="margin1">送她</text>
+      <text class="margin1">送他</text>
+    </view>
+    <view class="biaoti">
+      <text class="margin3 flex">自己</text>
+      <text class="margin3 flex">老婆/女票</text>
+      <text class="margin3 flex">姐妹/闺蜜</text>
+    </view>
+    <view class="biaoti">
+      <text class="margin3 flex">妈妈</text>
+      <text class="margin3 flex">长辈</text>
+      <text class="margin3 flex">同事</text>
+    </view>
+  </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Gift extends wepy.page {
+  config = {
+    navigationBarTitleText: '礼物说'
+  }
+}
+</script>
