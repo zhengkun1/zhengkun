@@ -6,24 +6,34 @@
   align-items: center;
   /* margin-top: 20px; */
 }
+
 .biaoti1 {
   display: flex;
   justify-content: center;
 }
+
 .biaoti2 {
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  margin-top: 80px
+  margin-top: 60px
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 
 .word {
-  font-size: 15px
+  font-size: 11px
 }
 
 .margin {
-  margin: 10px 10px 10px 70px;
+  margin: 10px 20px 10px 70px;
 }
 
 .margin1 {
@@ -31,18 +41,22 @@
 }
 
 .margin2 {
-  margin: 10px 70px 10px 10px;
+  margin: 10px 70px 10px 20px;
 }
+
 .margin3 {
   margin: 30px
 }
+
 .flex {
   flex: 1;
   background-color: blanchedalmond;
-  height: 80px;
+  height: 130px;
   width: 300px;
-  font-size: 15px
+  font-size: 15px;
+  /* border-radius: 6px; */
 }
+
 .border {
   /* display: flex;
   justify-content: center; */
@@ -53,10 +67,38 @@
   /* margin: 10px 60px 10px 10px;
   flex-direction: row; */
 }
+
 .line {
   width: 50px;
   height: 1px;
   background-color: black;
+}
+
+.border {
+  width: 30px;
+  height: 30px;
+}
+
+.big {
+  width: 40px;
+  height: 40px;
+}
+
+/* .weihang {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 90px;
+} */
+.view1 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 </style>
 
@@ -64,11 +106,11 @@
   <view>
     <view class="biaoti1">简单2步，选中心动好礼</view>
     <view class="biaoti2">
-      <text class="border"></text>
+      <image class="border" src="{{renwu}}"></image>
       <text class="line"></text>
-      <text class="border"></text>
+      <image class="border" src="{{liwu}}"></image>
       <text class="line"></text>
-      <text class="border"></text>
+      <image class="border" src="{{duigou}}"></image>
     </view>
     <view class="biaoti">
       <text class="margin word">送给TA</text>
@@ -76,20 +118,38 @@
       <text class="margin2 word">完成</text>
     </view>
     <view class="biaoti">
-      <text class="margin1">送她</text>
-      <text class="margin1">送他</text>
+      <text class="margin1" @tap="she" style="color: {{color}}; border-bottom: 2px solid {{underline1}}">送她</text>
+      <text class="margin1" @tap="he" style="color: {{color1}}; border-bottom: 2px solid {{underline2}}">送他</text>
     </view>
     <view class="biaoti">
-      <text class="margin3 flex">自己</text>
-      <text class="margin3 flex">老婆/女票</text>
-      <text class="margin3 flex">姐妹/闺蜜</text>
+      <view class="view flex">
+        <image class="big" src="{{paizhao}}"></image>
+        <view>{{ziji}}</view>
+      </view>
+      <view class="view flex">
+        <image class="big" src="{{zuanshi}}"></image>
+        <view>{{laopo}}</view>
+      </view>
+      <view class="view flex">
+        <image class="big" src="{{kouhong}}"></image>
+        <view>{{jiemei}}</view>
+      </view>
     </view>
     <view class="biaoti">
-      <text class="margin3 flex">妈妈</text>
-      <text class="margin3 flex">长辈</text>
-      <text class="margin3 flex">同事</text>
+      <view class="view flex">
+        <image class="big" src="{{mama}}"></image>
+        <view>{{bama}}</view>
+      </view>
+      <view class="view flex">
+        <image class="big" src="{{zhangbei}}"></image>
+        <view>{{zhangbei1}}</view>
+      </view>
+      <view class="view flex">
+        <image class="big" src="{{tongshi}}"></image>
+        <view>{{tongshi1}}</view>
+      </view>
     </view>
-  </view>
+    <view class="view1">先跳过，随便逛逛</view>
   </view>
 </template>
 
@@ -98,6 +158,73 @@ import wepy from 'wepy'
 export default class Gift extends wepy.page {
   config = {
     navigationBarTitleText: '礼物说'
+  }
+  data = {
+    renwu: '../images/addressbook_fill.png',
+    liwu: '../images/shoes.png',
+    duigou: '../images/selected.png',
+    paizhao: '../images/拍照2.png',
+    zuanshi: '../images/精选.png',
+    kouhong: '../images/people_fill.png',
+    mama: '../images/感谢.png',
+    zhangbei: '../images/生活.png',
+    tongshi: '../images/卡包.png',
+    ziji: '自己',
+    laopo: '老婆/女票',
+    jiemei: '姐妹/闺蜜',
+    bama: '妈妈',
+    zhangbei1: '长辈',
+    tongshi1: '同事',
+    color: 'red',
+    color1: 'gray',
+    underline1: 'red',
+    underline2: 'white'
+  }
+  methods = {
+    she() {
+      let self = this
+      self.renwu = '../images/addressbook_fill.png'
+      self.liwu = '../images/shoes.png'
+      self.duigou = '../images/selected.png'
+      self.paizhao = '../images/拍照2.png'
+      self.zuanshi = '../images/精选.png'
+      self.kouhong = '../images/people_fill.png'
+      self.mama = '../images/感谢.png'
+      self.zhangbei = '../images/生活.png'
+      self.tongshi = '../images/卡包.png'
+      self.ziji = '自己'
+      self.laopo = '老婆/女票'
+      self.jiemei = '姐妹/闺蜜'
+      self.bama = '妈妈'
+      self.zhangbei1 = '长辈'
+      self.tongshi1 = '同事'
+      self.color = 'red'
+      self.color1 = 'gray'
+      self.underline1 = 'red'
+      self.underline2 = 'white'
+    },
+    he() {
+      let self = this
+      self.renwu = '../images/addressbook_fill.png'
+      self.liwu = '../images/shoes.png'
+      self.duigou = '../images/selected.png'
+      self.paizhao = '../images/拍照2.png'
+      self.zuanshi = '../images/精选.png'
+      self.kouhong = '../images/people_fill.png'
+      self.mama = '../images/感谢.png'
+      self.zhangbei = '../images/生活.png'
+      self.tongshi = '../images/卡包.png'
+      self.ziji = '自己'
+      self.laopo = '老公/男票'
+      self.jiemei = '兄弟/基友'
+      self.bama = '爸爸'
+      self.zhangbei1 = '长辈'
+      self.tongshi1 = '同事'
+      self.color1 = 'red'
+      self.color = 'gray'
+      self.underline2 = 'red'
+      self.underline1 = 'white'
+    }
   }
 }
 </script>

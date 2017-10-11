@@ -1,0 +1,223 @@
+<style>
+.jiandan {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.circle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.songta {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.line {
+  height: 1px;
+  width: 50px;
+  background-color: gray;
+}
+
+.duiying {
+  font-size: 10px;
+}
+
+.line1 {
+  height: 1px;
+  width: 43px;
+  background-color: white;
+}
+
+.circle1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ta1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5px
+}
+
+.margin {
+  margin: 10px;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 100px;
+  margin: 3px;
+  background-color:orange;
+}
+
+.photo {
+  height: 30px;
+  width: 30px;
+}
+.bottom {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 10px;
+  /* color: red */
+}
+</style>
+
+<template>
+  <view>
+    <view class="jiandan">简单2步，选中心动好礼</view>
+    <view class="circle">
+      <image class="songta" src="{{songta}}"></image>
+      <text class="line"></text>
+      <image class="songta" src="{{like}}"></image>
+      <text class="line"></text>
+      <image class="songta" src="{{finish}}"></image>
+    </view>
+    <view class="circle1">
+      <view class="duiying">送给TA</view>
+      <text class="line1"></text>
+      <view class="duiying">TA喜欢的</view>
+      <text class="line1"></text>
+      <view class="duiying">完成</view>
+    </view>
+    <view class="ta">
+      <view class="margin" @tap="her" style="color:{{color}}; border-bottom:2px solid {{ul}}">送她</view>
+      <view class="margin" @tap="him" style="color:{{color1}}; border-bottom:2px solid {{ul1}}">送他</view>
+    </view>
+    <view class="ta1">
+      <view class="background">
+        <image class="photo" src="{{self}}"></image>
+        <text>{{self1}}</text>
+      </view>
+      <view class="background">
+        <image class="photo" src="{{wife}}"></image>
+        <text>{{husband}}</text>
+      </view>
+      <view class="background">
+        <image class="photo" src="{{sister}}"></image>
+        <text>{{brother}}</text>
+      </view>
+    </view>
+    <view class="ta1">
+      <view class="background">
+        <image class="photo" src="{{parents}}"></image>
+        <text>{{father}}</text>
+      </view>
+      <view class="background">
+        <image class="photo" src="{{zhangbei}}"></image>
+        <text>{{zhangbei1}}</text>
+      </view>
+      <view class="background">
+        <image class="photo" src="{{workmate}}"></image>
+        <text>{{workmate1}}</text>
+      </view>
+    </view>
+    <view class="bottom">先跳过，随便逛逛</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '礼物说'
+  }
+  data = {
+    songta: '../images/我的.png',
+    like: '../images/礼盒.png',
+    finish: '../images/对勾.png',
+    self: '../images/拍照2.png',
+    wife: '../images/钻石.png',
+    sister: '../images/购物袋.png',
+    parents: '../images/鲜花.png',
+    zhangbei: '../images/活动.png',
+    workmate: '../images/股友.png',
+    self1: '自己',
+    husband: '老婆/女票',
+    brother: '姐妹/闺蜜',
+    father: '妈妈',
+    zhangbei1: '长辈',
+    workmate1: '同事',
+    color: 'red',
+    color1: 'gray',
+    ul: 'red',
+    ul1: 'white'
+  }
+  methods = {
+    her() {
+      let self = this
+      self.songta = '../images/我的.png'
+      self.like = '../images/礼盒.png'
+      self.finish = '../images/对勾.png'
+      self.self = '../images/拍照2.png'
+      self.wife = '../images/钻石.png'
+      self.sister = '../images/购物袋.png'
+      self.parents = '../images/鲜花.png'
+      self.zhangbei = '../images/活动.png'
+      self.workmate = '../images/股友.png'
+      self.self1 = '自己'
+      self.husband = '老婆/女票'
+      self.brother = '姐妹/闺蜜'
+      self.father = '妈妈'
+      self.zhangbei1 = '长辈'
+      self.workmate1 = '同事'
+      self.color = 'red'
+      self.color1 = 'gray'
+      self.ul = 'red'
+      self.ul1 = 'white'
+    },
+    him() {
+      let self = this
+      self.songta = '../images/我的.png'
+      self.like = '../images/礼盒.png'
+      self.finish = '../images/对勾.png'
+      self.self = '../images/拍照2.png'
+      self.wife = '../images/电脑.png'
+      self.sister = '../images/电话.png'
+      self.parents = '../images/男装.png'
+      self.zhangbei = '../images/购物袋.png'
+      self.workmate = '../images/股友.png'
+      self.self1 = '自己'
+      self.husband = '老公/男票'
+      self.brother = '兄弟/基友'
+      self.father = '爸爸'
+      self.zhangbei1 = '长辈'
+      self.workmate1 = '同事'
+      self.color1 = 'red'
+      self.color = 'gray'
+      self.ul1 = 'red'
+      self.ul = 'white'
+    }
+  }
+}
+
+</script>
