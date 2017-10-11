@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 13px;
 }
 
 .circle {
@@ -12,29 +12,29 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 1.9rem;
 }
 
 .songta {
-  height: 25px;
-  width: 25px;
+  height: 1.3rem;
+  width: 1.3rem;
   border: 1px solid black;
   border-radius: 50%;
 }
 
 .line {
   height: 1px;
-  width: 50px;
+  width: 3.1rem;
   background-color: gray;
 }
 
 .duiying {
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 
 .line1 {
   height: 1px;
-  width: 43px;
+  width: 2.2rem;
   background-color: white;
 }
 
@@ -43,25 +43,25 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0.6rem;
 }
 
 .ta {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 1.8rem;
 }
 
 .ta1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 5px
+  margin-top: 0.3rem
 }
 
 .margin {
-  margin: 10px;
+  margin: 0.6rem;
 }
 
 .background {
@@ -69,25 +69,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 130px;
-  width: 100px;
-  margin: 3px;
-  background-color:orange;
+  height: 7rem;
+  width: 5.5rem;
+  margin: 0.2rem;
+  background-color: orange;
 }
 
 .photo {
-  height: 30px;
-  width: 30px;
+  height: 1.8rem;
+  width: 1.8rem;
 }
+
 .bottom {
   position: fixed;
-  bottom: 5px;
+  bottom: 0.3rem;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  font-size: 10px;
+  font-size: 0.6rem;
   /* color: red */
 }
 </style>
